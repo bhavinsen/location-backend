@@ -6,3 +6,4 @@
 3. Now run python server with following command.
 ==> python3 manage.py runserver (note : if you're using windows then run command with only python)
 
+
