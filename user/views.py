@@ -65,7 +65,7 @@ def login_View(request):
                    "password": request.data.get('password')}
         print("payload", payload)
         jwt_token = requests.post(
-            "http://127.0.0.1:8000/api/token/", payload)
+            "https://messagelocationapi.herokuapp.com/api/token/", payload)
 
         return Response({"succes": "User Successfully Login", "token": jwt_token.json().get("access", None)}, status=200)
 
@@ -128,7 +128,7 @@ class GetMessageView(APIView):
                 {'lat': float(request.user.latitude), 'lng': float(request.user.longitude)}]
             for info in m_serializer.data:
 
-                test_point = [
+                test_point = [ 
                     {'lat': float(info['latitude']), 'lng': float(info["longitude"])}]
 
                 lat1 = center_point[0]['lat']
